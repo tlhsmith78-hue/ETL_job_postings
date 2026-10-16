@@ -4,3 +4,5 @@ __pycache__/
 cleaned_data
 raw_data
 spark-warehouse
+
+.~lock.*

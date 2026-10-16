@@ -12,12 +12,12 @@ def main():
     load_dotenv()
 
     s3 = boto3.client("s3",
-                    aws_access_key_id=os.environ["aws_access_key_id"],
-                    aws_secret_access_key=os.environ["aws_secret_access_key"])
+                    aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
+                    aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"])
 
     adzuna = {
-        "id": os.environ["id"],
-        "key": os.environ["key"]
+        "id": os.environ["ID"],
+        "key": os.environ["KEY"]
     }
 
     search = {
@@ -77,7 +77,7 @@ def upload(data, s3):
     day = datetime.date.today()
     now = datetime.datetime.now()
     s3.put_object(
-        Bucket = "raw-job-ads-bucket-897301",
+        Bucket = os.environ["BUCKET"],
         Key= f"raw/{now.year}/{now.month:02d}/{now.day:02d}/{day}_jobs.json",
         Body=data
     )
