@@ -1,1 +1,9 @@
-To properly run this pipeline, you will need to install:
+To properly run this pipeline, you will need to pip install:
+    - boto3
+    - requests
+    - python-dotenv
+    - pyspark
+
+Additionally, you will need:
+    - An AWS account and a S3 bucket created to store data,
+    - PostgreSQL
